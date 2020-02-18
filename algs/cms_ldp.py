@@ -17,7 +17,7 @@ class CMSLDP(SketchLDP):
         """
         super(CMSLDP, self).__init__(data, error_p, confidence, privacy)
         self.file_path_of_hash = \
-            '../constants/parameters_of_2_universal_hash_functions.json'
+            '../constants/paras_of_2_universal_hash_h.json'
         self.total_hash_num = 100
         self.hash_index = []
         self.hash_parameters = []
