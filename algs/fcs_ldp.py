@@ -9,14 +9,15 @@ from pub_lib import hash_functions
 
 class FCSLDP(SketchLDP):
 
-    def __init__(self, data, error_p, confidence, privacy):
+    def __init__(self, data, error_p, confidence, privacy, att_num):
         """
         :param data: a list
         :param error_p:
         :param confidence:
         :param privacy:
         """
-        super(FCSLDP, self).__init__(data, error_p, confidence, privacy)
+        super(FCSLDP, self).__init__(data, error_p, confidence, privacy,
+                                     att_num)
         self.file_path_of_hash = \
             '../constants/paras_of_4_universal_hash_h.json'
         self.total_hash_num = 100

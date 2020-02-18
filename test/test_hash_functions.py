@@ -5,6 +5,9 @@ import random
 from pub_lib import hash_functions
 
 
+PRIME_INT = int('1' * 61, 2)
+
+
 def generate_random(num, f1_path, f2_path):
     x = []
     y = []
@@ -21,7 +24,11 @@ def generate_random(num, f1_path, f2_path):
         json.dump(y, f)
 
 
-PRIME_INT = int('1' * 61, 2)
+def test_mult_add_prime():
+    pass
+
+
+
 
 a = random.randint(1, PRIME_INT)
 b = random.randint(1, PRIME_INT)

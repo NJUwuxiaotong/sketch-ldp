@@ -8,14 +8,15 @@ from pub_lib import hash_functions
 
 
 class CMSLDP(SketchLDP):
-    def __init__(self, data, error_p, confidence, privacy):
+    def __init__(self, data, error_p, confidence, privacy, att_num):
         """
         :param data: a list
         :param error_p:
         :param confidence:
         :param privacy:
         """
-        super(CMSLDP, self).__init__(data, error_p, confidence, privacy)
+        super(CMSLDP, self).__init__(data, error_p, confidence, privacy,
+                                     att_num)
         self.file_path_of_hash = \
             '../constants/paras_of_2_universal_hash_h.json'
         self.total_hash_num = 100
@@ -30,7 +31,7 @@ class CMSLDP(SketchLDP):
 
     def generate_hash_index(self, hash_num):
         hash_index = []
-        while len(hash_index) <= hash_num:
+        while len(hash_index) < hash_num:
             h_index = random.randint(0, self.total_hash_num - 1)
             if h_index not in hash_index:
                 hash_index.append(h_index)
@@ -57,12 +58,15 @@ class CMSLDP(SketchLDP):
         for i in range(self.data_len):
             values = self.client_cms_ldp(self.data[i])
             self.sketch += values
+        print(self.sketch)
         sub_privacy = self.privacy / self.hash_num
         e_privacy = math.exp(sub_privacy)
         p_positive = e_privacy / (e_privacy + self.bit_len - 1)
         p_negative = 1 / (e_privacy + self.bit_len - 1)
         q = p_positive/self.bit_len + \
             (self.bit_len - 1) * p_negative / self.bit_len
+        print('p*: %s' % p_positive)
+        print('q*: %s' % q)
         self.sketch = (self.sketch - self.data_len*q)/(p_positive - q)
 
     def server_cms_ldp(self, element):
@@ -72,19 +76,25 @@ class CMSLDP(SketchLDP):
             pos = hash_functions.cw_trick_2(element, para[0], para[1])
             pos = pos % self.bit_len
             f.append(self.sketch[i][pos])
-        return min(f)
+        min_v = min(f)
+        if min_v < 0:
+            return 0
+        else:
+            return math.ceil(min_v)
 
     def random_generator(self, sub_privacy, pos):
         e_privacy = math.exp(sub_privacy)
         p_positive = e_privacy/(e_privacy+self.bit_len-1)
         p_negative = 1/(e_privacy+self.bit_len-1)
 
+        p_p = p_positive / (p_positive + p_negative * (self.bit_len - 1))
+        p_q = p_negative / (p_positive + p_negative * (self.bit_len - 1))
+
         p = random.uniform(0, 1)
+        if p < pos * p_q:
+            return math.ceil(p/p_q) - 1
 
-        if p < pos * p_negative:
-            return math.ceil(p/p_negative) - 1
-
-        if p < pos * p_negative + p_positive:
+        if p < pos * p_q + p_p:
             return pos
 
-        return pos + math.ceil(p - pos*p_negative - p_positive)
+        return pos + math.ceil((p - pos*p_q - p_p)/p_q)

@@ -65,9 +65,11 @@ def mult_add_prime(x, a, b):
     a0 = int(low_32_from_64(a), 2) * x
     a1 = int(high_32_from_64(a), 2) * x
     c0 = a0 + int(bin(a1) + '0' * 32, 2)
-    c1 = int(bin(a0)[:-32], 2) + a1
 
-    c = int_and_prime(c0) + int(bin(c1)[:-29], 2) + b
+    a0 = map_int_to_64(c0)
+    c1 = int(a0[:-32], 2) + a1
+    c1 = map_int_to_64(c1)
+    c = int_and_prime(c0) + int(c1[:-29], 2) + b
     return c
 
 

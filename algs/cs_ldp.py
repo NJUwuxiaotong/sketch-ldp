@@ -8,8 +8,9 @@ from pub_lib import hash_functions
 
 
 class CSLDP(SketchLDP):
-    def __init__(self, data, error_p, confidence, privacy):
-        super(CSLDP, self).__init__(data, error_p, confidence, privacy)
+    def __init__(self, data, error_p, confidence, privacy, att_num):
+        super(CSLDP, self).__init__(data, error_p, confidence, privacy,
+                                    att_num)
         self.file_path_of_hash_h = \
             '../constants/paras_of_2_universal_hash_h.json'
         self.file_path_of_hash_g = \
