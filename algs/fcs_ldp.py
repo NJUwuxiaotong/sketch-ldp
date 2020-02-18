@@ -8,7 +8,6 @@ from pub_lib import hash_functions
 
 
 class FCSLDP(SketchLDP):
-
     def __init__(self, data, error_p, confidence, privacy, att_num):
         """
         :param data: a list
@@ -32,7 +31,7 @@ class FCSLDP(SketchLDP):
 
     def generate_hash_index(self, hash_num):
         hash_index = []
-        while len(hash_index) <= hash_num:
+        while len(hash_index) < hash_num:
             h_index = random.randint(0, self.total_hash_num - 1)
             if h_index not in hash_index:
                 hash_index.append(h_index)
@@ -75,19 +74,25 @@ class FCSLDP(SketchLDP):
                                             para[2], para[3])
             pos = pos % self.bit_len
             f.append(self.sketch[i][pos])
-        return min(f)
+        min_v = min(f)
+        if min_v < 0:
+            return 0
+        else:
+            return math.ceil(min_v)
 
     def random_generator(self, sub_privacy, pos):
         e_privacy = math.exp(sub_privacy)
         p_positive = e_privacy/(e_privacy+self.bit_len-1)
         p_negative = 1/(e_privacy+self.bit_len-1)
 
+        p_p = p_positive / (p_positive + p_negative * (self.bit_len - 1))
+        p_q = p_negative / (p_positive + p_negative * (self.bit_len - 1))
+
         p = random.uniform(0, 1)
+        if p < pos * p_q:
+            return math.ceil(p/p_q) - 1
 
-        if p < pos * p_negative:
-            return math.ceil(p/p_negative) - 1
-
-        if p < pos * p_negative + p_positive:
+        if p < pos * p_q + p_p:
             return pos
 
-        return pos + math.ceil(p - pos*p_negative - p_positive)
+        return pos + math.ceil((p - pos*p_q - p_p)/p_q)

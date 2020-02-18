@@ -58,15 +58,12 @@ class CMSLDP(SketchLDP):
         for i in range(self.data_len):
             values = self.client_cms_ldp(self.data[i])
             self.sketch += values
-        print(self.sketch)
         sub_privacy = self.privacy / self.hash_num
         e_privacy = math.exp(sub_privacy)
         p_positive = e_privacy / (e_privacy + self.bit_len - 1)
         p_negative = 1 / (e_privacy + self.bit_len - 1)
         q = p_positive/self.bit_len + \
             (self.bit_len - 1) * p_negative / self.bit_len
-        print('p*: %s' % p_positive)
-        print('q*: %s' % q)
         self.sketch = (self.sketch - self.data_len*q)/(p_positive - q)
 
     def server_cms_ldp(self, element):

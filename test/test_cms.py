@@ -1,6 +1,6 @@
 import random
 
-from algs.cs_ldp import CSLDP
+from algs.apple import CMS
 
 
 def test_client_cms_ldp():
@@ -9,7 +9,7 @@ def test_client_cms_ldp():
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cs = CSLDP(data, error_p, confidence, privacy, att_num)
+    cs = CMS(data, error_p, confidence, privacy, att_num)
 
     element = 2
     print(cs.client_cs_ldp(element))
@@ -21,7 +21,7 @@ def test_random_generator():
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cs = CSLDP(data, error_p, confidence, privacy, att_num)
+    cs = CMS(data, error_p, confidence, privacy, att_num)
 
     x = []
     for i in range(100):
@@ -37,7 +37,7 @@ def test_sketch_cms_ldp():
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cms = CSLDP(data, error_p, confidence, privacy, att_num)
+    cms = CMS(data, error_p, confidence, privacy, att_num)
     cms.sketch_cs_ldp()
     print(cms.sketch)
 
@@ -57,7 +57,7 @@ def test_server_cms_ldp():
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cms = CSLDP(data, error_p, confidence, privacy, att_num)
+    cms = CMS(data, error_p, confidence, privacy, att_num)
     cms.sketch_cs_ldp()
     print(cms.server_cms_ldp(1))
     print(cms.server_cms_ldp(2))
