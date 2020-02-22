@@ -4,7 +4,10 @@ import numpy as np
 import random
 
 from algs.sketch_ldp import SketchLDP
+from log.logger import Logger
 from pub_lib import hash_functions
+
+LOG = Logger(level='debug').logger
 
 
 class FCSLDP(SketchLDP):
@@ -26,6 +29,9 @@ class FCSLDP(SketchLDP):
         self.bit_len = math.ceil(2 / self.error_p)
         self.hash_num = math.ceil(math.log2(1 / self.confidence))
         self.generate_hash_index(self.hash_num)
+        LOG.info('bit length: %s, hash number: %s' % (self.bit_len,
+                                                      self.hash_num))
+        LOG.info('hash index is %s' % self.hash_index)
         self.get_parameters_of_hash()
         self.sketch = np.zeros([self.hash_num, self.bit_len])
 
@@ -43,7 +49,7 @@ class FCSLDP(SketchLDP):
         for i in range(self.hash_num):
             self.hash_parameters.append(parameters[self.hash_index[i]])
 
-    def client_cms_ldp(self, element):
+    def client_fcs_ldp(self, element):
         sub_privacy = self.privacy/self.hash_num
         values = np.zeros([self.hash_num, self.bit_len])
         for i in range(self.hash_num):
@@ -54,9 +60,9 @@ class FCSLDP(SketchLDP):
             values[i][y] = 1
         return values
 
-    def sketch_cms_ldp(self):
+    def sketch_fcs_ldp(self):
         for i in range(self.data_len):
-            values = self.client_cms_ldp(self.data[i])
+            values = self.client_fcs_ldp(self.data[i])
             self.sketch += values
         sub_privacy = self.privacy / self.hash_num
         e_privacy = math.exp(sub_privacy)
@@ -66,7 +72,7 @@ class FCSLDP(SketchLDP):
             (self.bit_len - 1) * p_negative / self.bit_len
         self.sketch = (self.sketch - self.data_len*q)/(p_positive - q)
 
-    def server_cms_ldp(self, element):
+    def server_fcs_ldp(self, element):
         f = list()
         for i in range(self.hash_num):
             para = self.hash_parameters[i]

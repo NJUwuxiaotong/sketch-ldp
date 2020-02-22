@@ -4,7 +4,10 @@ import numpy as np
 import random
 
 from algs.sketch_ldp import SketchLDP
+from log.logger import Logger
 from pub_lib import hash_functions
+
+LOG = Logger(level='debug').logger
 
 
 class CMSLDP(SketchLDP):
@@ -25,7 +28,10 @@ class CMSLDP(SketchLDP):
         self.data_len = len(data)
         self.bit_len = math.ceil(2 / self.error_p)
         self.hash_num = math.ceil(math.log2(1 / self.confidence))
+        LOG.info('bit length: %s, hash number: %s' % (self.bit_len,
+                                                      self.hash_num))
         self.generate_hash_index(self.hash_num)
+        LOG.info('hash index is %s' % self.hash_index)
         self.get_parameters_of_hash()
         self.sketch = np.zeros([self.hash_num, self.bit_len])
 

@@ -4,7 +4,10 @@ import numpy as np
 import random
 
 from algs.sketch_ldp import SketchLDP
+from log.logger import Logger
 from pub_lib import hash_functions
+
+LOG = Logger(level='debug').logger
 
 
 class CSLDP(SketchLDP):
@@ -20,9 +23,12 @@ class CSLDP(SketchLDP):
         self.hash_h_parameters = []
         self.hash_g_parameters = []
         self.data_len = len(data)
-        self.bit_len = math.ceil(3 / self.error_p / self.error_p)
+        self.bit_len = math.ceil(2 / self.error_p)
         self.hash_num = math.ceil(math.log2(1 / self.confidence))
         self.generate_hash_index(self.hash_num)
+        LOG.info('bit length: %s, hash number: %s' % (self.bit_len,
+                                                      self.hash_num))
+        LOG.info('hash index is %s' % self.hash_index)
         self.get_parameters_of_hash()
         self.sketch = np.zeros([self.hash_num, self.bit_len])
 
@@ -74,7 +80,7 @@ class CSLDP(SketchLDP):
             values = values * c
             self.sketch += values
 
-    def server_cms_ldp(self, element):
+    def server_cs_ldp(self, element):
         f = list()
         for i in range(self.hash_num):
             h_para = self.hash_h_parameters[i]
@@ -85,7 +91,9 @@ class CSLDP(SketchLDP):
             v = hash_functions.cw_trick_2(element, g_para[0], g_para[1]) % 2
             if v == 0:
                 v = -1
-            f.append(self.bit_len*(self.sketch[i][pos] * v - self.data_len/self.bit_len)/(self.bit_len - 1))
+            f.append(self.bit_len*(
+                    self.sketch[i][pos] * v - self.data_len/self.bit_len)/(
+                    self.bit_len - 1))
 
         v_np = np.array(f)
         r = np.median(v_np)

@@ -1,0 +1,142 @@
+2020-02-22 16:49:39,257 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:46] - INFO: Process dataset WISDOM
+2020-02-22 16:49:39,257 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:46] - INFO: Process dataset WISDOM
+2020-02-22 16:49:39,257 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.15
+2020-02-22 16:49:39,257 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.15
+2020-02-22 16:49:39,257 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 14, hash number: 4
+2020-02-22 16:49:39,257 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 14, hash number: 4
+2020-02-22 16:49:39,257 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [40, 23, 14, 28]
+2020-02-22 16:49:39,257 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [40, 23, 14, 28]
+2020-02-22 17:38:47,763 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 2556300.17634611 -1203761.24875968   666948.99694274 -1183079.86883656
+    683170.54440886 -1233289.42051742   679191.67427566 -1184085.51733176
+   1570516.88257596 -1197362.99239164   662911.82834605 -1214663.06143233
+   1572163.81416956 -1174961.80779556]
+ [ -272370.4214258  -1228508.94651123   722682.32803928 -1208658.31969284
+   2540093.20349586 -1223101.76402252 -1182963.27190958 -1203455.18182635
+   4388708.33153552 -1213001.55522286   674600.67027581 -1197086.07469006
+   1631176.43383742 -1228115.43188267]
+ [ 1604432.01371133 -1199549.18477251   676976.33266304 -1193325.82379495
+   1650735.56833835 -1218408.73771157  1598033.75734329 -1218816.826956
+    682937.3505549  -1216237.11994656  1624370.08822495 -1221702.60089876
+    653073.96263209 -1222518.77938762]
+ [-1175763.41166855 -1211340.04901339   659617.96515886 -1207055.11194687
+   6307966.62270932 -1191503.99681088 -1198062.57395352 -1209226.72971187
+  -1201064.94482326 -1206690.74655005   670272.00936167 -1204810.6211025
+   4373536.15641222 -1205874.56806119]]
+2020-02-22 17:38:47,763 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 2556300.17634611 -1203761.24875968   666948.99694274 -1183079.86883656
+    683170.54440886 -1233289.42051742   679191.67427566 -1184085.51733176
+   1570516.88257596 -1197362.99239164   662911.82834605 -1214663.06143233
+   1572163.81416956 -1174961.80779556]
+ [ -272370.4214258  -1228508.94651123   722682.32803928 -1208658.31969284
+   2540093.20349586 -1223101.76402252 -1182963.27190958 -1203455.18182635
+   4388708.33153552 -1213001.55522286   674600.67027581 -1197086.07469006
+   1631176.43383742 -1228115.43188267]
+ [ 1604432.01371133 -1199549.18477251   676976.33266304 -1193325.82379495
+   1650735.56833835 -1218408.73771157  1598033.75734329 -1218816.826956
+    682937.3505549  -1216237.11994656  1624370.08822495 -1221702.60089876
+    653073.96263209 -1222518.77938762]
+ [-1175763.41166855 -1211340.04901339   659617.96515886 -1207055.11194687
+   6307966.62270932 -1191503.99681088 -1198062.57395352 -1209226.72971187
+  -1201064.94482326 -1206690.74655005   670272.00936167 -1204810.6211025
+   4373536.15641222 -1205874.56806119]]
+2020-02-22 17:38:47,825 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 722683, 2: 662912, 3: 674601, 4: 1624371, 5: 662912, 6: 1570517, 7: 659618, 8: 653074, 9: 0, 10: 653074, 11: 676977, 12: 670273, 13: 682938, 14: 659618, 15: 674601, 16: 683171, 17: 666949, 18: 1572164}
+2020-02-22 17:38:47,825 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 722683, 2: 662912, 3: 674601, 4: 1624371, 5: 662912, 6: 1570517, 7: 659618, 8: 653074, 9: 0, 10: 653074, 11: 676977, 12: 670273, 13: 682938, 14: 659618, 15: 674601, 16: 683171, 17: 666949, 18: 1572164}
+2020-02-22 17:38:47,825 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.18
+2020-02-22 17:38:47,825 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.18
+2020-02-22 17:38:47,825 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 12, hash number: 4
+2020-02-22 17:38:47,825 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 12, hash number: 4
+2020-02-22 17:38:47,825 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [39, 48, 85, 89]
+2020-02-22 17:38:47,825 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [39, 48, 85, 89]
+2020-02-22 18:17:09,365 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 3332226.10897088 -1444915.40819094   443138.30812379 -1411441.27728804
+   2324184.61930883 -1429645.15789004  2377258.98759459 -1422804.29072504
+   -472154.34581804 -1404126.41745431   532940.70293025 -1424661.82956198]
+ [-1432783.75799383 -1419242.94040318  7182494.17833852 -1434551.62254209
+  -1428210.36927116 -1431143.99957226  7027383.28014784 -1410416.42827456
+  -1418768.94773445 -1412927.30835759 -1405612.44852386 -1416219.63581341]
+ [ 2277246.5344913  -1427390.49006038  2412846.86958779 -1425558.57244877
+    471667.54253663 -1411735.92137942   455756.7616023  -1424059.73076656
+   1451013.25982116 -1412530.17936487  1440598.23172163 -1407854.30574085]
+ [ 2355749.96892411 -1410262.70092254   466030.87296247 -1404792.56931307
+   1427685.13415175 -1399399.30137962  1414951.38515922 -1409801.51886647
+    441050.17825882 -1430093.52933344  2363282.60917321 -1414400.52881448]]
+2020-02-22 18:17:09,365 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 3332226.10897088 -1444915.40819094   443138.30812379 -1411441.27728804
+   2324184.61930883 -1429645.15789004  2377258.98759459 -1422804.29072504
+   -472154.34581804 -1404126.41745431   532940.70293025 -1424661.82956198]
+ [-1432783.75799383 -1419242.94040318  7182494.17833852 -1434551.62254209
+  -1428210.36927116 -1431143.99957226  7027383.28014784 -1410416.42827456
+  -1418768.94773445 -1412927.30835759 -1405612.44852386 -1416219.63581341]
+ [ 2277246.5344913  -1427390.49006038  2412846.86958779 -1425558.57244877
+    471667.54253663 -1411735.92137942   455756.7616023  -1424059.73076656
+   1451013.25982116 -1412530.17936487  1440598.23172163 -1407854.30574085]
+ [ 2355749.96892411 -1410262.70092254   466030.87296247 -1404792.56931307
+   1427685.13415175 -1399399.30137962  1414951.38515922 -1409801.51886647
+    441050.17825882 -1430093.52933344  2363282.60917321 -1414400.52881448]]
+2020-02-22 18:17:09,365 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 455757, 2: 471668, 3: 455757, 4: 471668, 5: 532941, 6: 441051, 7: 1427686, 8: 2277247, 9: 2363283, 10: 443139, 11: 532941, 12: 466031, 13: 466031, 14: 1427686, 15: 1427686, 16: 443139, 17: 0, 18: 441051}
+2020-02-22 18:17:09,365 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 455757, 2: 471668, 3: 455757, 4: 471668, 5: 532941, 6: 441051, 7: 1427686, 8: 2277247, 9: 2363283, 10: 443139, 11: 532941, 12: 466031, 13: 466031, 14: 1427686, 15: 1427686, 16: 443139, 17: 0, 18: 441051}
+2020-02-22 18:17:09,365 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.2
+2020-02-22 18:17:09,365 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.2
+2020-02-22 18:17:09,365 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 10, hash number: 4
+2020-02-22 18:17:09,365 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 10, hash number: 4
+2020-02-22 18:17:09,365 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [75, 68, 64, 85]
+2020-02-22 18:17:09,365 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [75, 68, 64, 85]
+2020-02-22 18:59:38,852 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 3030025.50487294 -1744600.41851848  1171054.7896651  -1721034.98861391
+   2140610.22481909 -1732403.01392686   200681.03362281 -1743461.40430911
+   2129872.52775793 -1730744.25536952]
+ [ 2087231.37444398 -1732834.29115177   210755.22726104 -1729649.47472168
+   1145797.42603204 -1763974.71846818  3052496.15412967 -1748658.84778877
+   2191036.48496215 -1712199.33469849]
+ [  175622.72101664 -1745794.72467976  2089443.05252043 -1712785.42938875
+   2108806.29407975 -1745164.39642798  3095833.9860377  -1739922.71938679
+   1220574.2617968  -1746613.04556805]
+ [ 2171429.95881442 -1754055.3422953    168888.16127385 -1727161.33688568
+   1170070.59292108 -1728919.62095645  2037435.44255272 -1737744.21648149
+   3140841.63489345 -1740785.2738366 ]]
+2020-02-22 18:59:38,852 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 3030025.50487294 -1744600.41851848  1171054.7896651  -1721034.98861391
+   2140610.22481909 -1732403.01392686   200681.03362281 -1743461.40430911
+   2129872.52775793 -1730744.25536952]
+ [ 2087231.37444398 -1732834.29115177   210755.22726104 -1729649.47472168
+   1145797.42603204 -1763974.71846818  3052496.15412967 -1748658.84778877
+   2191036.48496215 -1712199.33469849]
+ [  175622.72101664 -1745794.72467976  2089443.05252043 -1712785.42938875
+   2108806.29407975 -1745164.39642798  3095833.9860377  -1739922.71938679
+   1220574.2617968  -1746613.04556805]
+ [ 2171429.95881442 -1754055.3422953    168888.16127385 -1727161.33688568
+   1170070.59292108 -1728919.62095645  2037435.44255272 -1737744.21648149
+   3140841.63489345 -1740785.2738366 ]]
+2020-02-22 18:59:38,852 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 168889, 2: 1145798, 3: 168889, 4: 2140611, 5: 2089444, 6: 2037436, 7: 2087232, 8: 2037436, 9: 175623, 10: 2037436, 11: 1171055, 12: 2037436, 13: 210756, 14: 210756, 15: 2140611, 16: 1170071, 17: 2191037, 18: 175623}
+2020-02-22 18:59:38,852 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 168889, 2: 1145798, 3: 168889, 4: 2140611, 5: 2089444, 6: 2037436, 7: 2087232, 8: 2037436, 9: 175623, 10: 2037436, 11: 1171055, 12: 2037436, 13: 210756, 14: 210756, 15: 2140611, 16: 1170071, 17: 2191037, 18: 175623}
+2020-02-22 18:59:38,852 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.25
+2020-02-22 18:59:38,852 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:48] - INFO: Parameter error is 0.25
+2020-02-22 18:59:38,852 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 8, hash number: 4
+2020-02-22 18:59:38,852 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:32] - INFO: bit length: 8, hash number: 4
+2020-02-22 18:59:38,852 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [30, 38, 0, 19]
+2020-02-22 18:59:38,852 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cms_ldp.py[line:34] - INFO: hash index is [30, 38, 0, 19]
+2020-02-22 19:52:32,436 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 1716554.19450578 -2224909.43278776  2776985.22709209 -2228314.169922
+   1649429.56870318 -2239657.07500482  2781472.01767172 -2231560.3302582 ]
+ [ 4728291.38297984 -2245934.85059753   762938.627465   -2252193.97009635
+   1735583.41026972 -2226317.96787617  1707571.28529957 -2209937.91744408]
+ [ 1701312.16580075 -2217372.37085773  1695948.53880846 -2243752.08761284
+   2755679.96787403 -2228127.60898314  2777442.3013923  -2241130.90642183]
+ [ 2732089.33715491 -2228398.12234449  1786626.4831424  -2243752.08761284
+   1724986.74894235 -2241074.93814017  2722761.29021181 -2253238.71135398]]
+2020-02-22 19:52:32,436 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:52] - INFO: [[ 1716554.19450578 -2224909.43278776  2776985.22709209 -2228314.169922
+   1649429.56870318 -2239657.07500482  2781472.01767172 -2231560.3302582 ]
+ [ 4728291.38297984 -2245934.85059753   762938.627465   -2252193.97009635
+   1735583.41026972 -2226317.96787617  1707571.28529957 -2209937.91744408]
+ [ 1701312.16580075 -2217372.37085773  1695948.53880846 -2243752.08761284
+   2755679.96787403 -2228127.60898314  2777442.3013923  -2241130.90642183]
+ [ 2732089.33715491 -2228398.12234449  1786626.4831424  -2243752.08761284
+   1724986.74894235 -2241074.93814017  2722761.29021181 -2253238.71135398]]
+2020-02-22 19:52:32,446 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 2732090, 2: 1649430, 3: 1701313, 4: 762939, 5: 2722762, 6: 1649430, 7: 1707572, 8: 1716555, 9: 762939, 10: 1649430, 11: 1786627, 12: 1707572, 13: 1701313, 14: 762939, 15: 2722762, 16: 1695949, 17: 1701313, 18: 1735584}
+2020-02-22 19:52:32,446 - F:/busyfish/paper/computer communications March 15/experiments/sketch-ldp/analysis/analyse_expected_error.py[line:55] - INFO: Frequency estimation is {1: 2732090, 2: 1649430, 3: 1701313, 4: 762939, 5: 2722762, 6: 1649430, 7: 1707572, 8: 1716555, 9: 762939, 10: 1649430, 11: 1786627, 12: 1707572, 13: 1701313, 14: 762939, 15: 2722762, 16: 1695949, 17: 1701313, 18: 1735584}
+2020-02-22 20:36:15,591 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fas_ldp.py[line:30] - INFO: bit length: 10, hash number: 4
+2020-02-22 20:36:15,594 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fas_ldp.py[line:31] - INFO: hash index is [29, 3, 28, 48, 45]
+2020-02-22 20:37:24,826 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fcs_ldp.py[line:33] - INFO: bit length: 10, hash number: 4
+2020-02-22 20:37:24,827 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fcs_ldp.py[line:34] - INFO: hash index is [71, 50, 36, 87]
+2020-02-22 20:37:52,890 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fcs_ldp.py[line:33] - INFO: bit length: 10, hash number: 4
+2020-02-22 20:37:52,891 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fcs_ldp.py[line:34] - INFO: hash index is [83, 77, 44, 67]
+2020-02-22 20:38:28,886 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cs_ldp.py[line:30] - INFO: bit length: 10, hash number: 4
+2020-02-22 20:38:28,887 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\cs_ldp.py[line:31] - INFO: hash index is [77, 90, 46, 75, 84]
+2020-02-22 20:38:49,991 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fcs_ldp.py[line:33] - INFO: bit length: 10, hash number: 4
+2020-02-22 20:38:49,992 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fcs_ldp.py[line:34] - INFO: hash index is [11, 91, 85, 80]
+2020-02-22 20:40:23,810 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fas_ldp.py[line:30] - INFO: bit length: 10, hash number: 4
+2020-02-22 20:40:23,810 - F:\busyfish\paper\computer communications March 15\experiments\sketch-ldp\algs\fas_ldp.py[line:31] - INFO: hash index is [1, 52, 78, 94, 51]

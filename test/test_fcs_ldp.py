@@ -35,7 +35,7 @@ def test_generate_hash():
     print(cms.hash_parameters)
 
 
-def test_client_cms_ldp():
+def test_client_fcs_ldp():
     data = [1, 3, 5, 1, 3, 2, 4, 4]
     error_p = 0.1
     confidence = 0.1
@@ -44,24 +44,24 @@ def test_client_cms_ldp():
     cms = FCSLDP(data, error_p, confidence, privacy, att_num)
 
     element = 2
-    print(cms.client_cms_ldp(element))
+    print(cms.client_fcs_ldp(element))
 
 
-def test_sketch_cms_ldp():
+def test_sketch_fcs_ldp():
     data = [1, 3, 5, 1, 3, 2, 4, 4]
     error_p = 0.1
     confidence = 0.1
     privacy = 2
     att_num = 5
     cms = FCSLDP(data, error_p, confidence, privacy, att_num)
-    cms.sketch_cms_ldp()
+    cms.sketch_fcs_ldp()
     print(cms.sketch)
 
 
-def test_server_cms_ldp():
+def test_server_fcs_ldp():
     data = []
     s = {1:0, 2:0, 3:0, 4:0, 5:0}
-    for i in range(1000):
+    for i in range(10000):
         r = random.randint(1, 5)
         data.append(r)
         s[r] += 1
@@ -74,12 +74,12 @@ def test_server_cms_ldp():
     privacy = 2
     att_num = 5
     cms = FCSLDP(data, error_p, confidence, privacy, att_num)
-    cms.sketch_cms_ldp()
-    print(cms.server_cms_ldp(1))
-    print(cms.server_cms_ldp(2))
-    print(cms.server_cms_ldp(3))
-    print(cms.server_cms_ldp(4))
-    print(cms.server_cms_ldp(5))
+    cms.sketch_fcs_ldp()
+    print(cms.server_fcs_ldp(1))
+    print(cms.server_fcs_ldp(2))
+    print(cms.server_fcs_ldp(3))
+    print(cms.server_fcs_ldp(4))
+    print(cms.server_fcs_ldp(5))
 
 
-test_server_cms_ldp()
+test_server_fcs_ldp()

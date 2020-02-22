@@ -1,18 +1,18 @@
 import random
 
-from algs.cs_ldp import CSLDP
+from algs.fas_ldp import FASLDP
 
 
-def test_client_cms_ldp():
+def test_client_fas_ldp():
     data = [1, 3, 5, 1, 3, 2, 4, 4]
     error_p = 0.1
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cs = CSLDP(data, error_p, confidence, privacy, att_num)
+    cs = FASLDP(data, error_p, confidence, privacy, att_num)
 
     element = 2
-    print(cs.client_cs_ldp(element))
+    print(cs.client_fas_ldp(element))
 
 
 def test_random_generator():
@@ -21,7 +21,7 @@ def test_random_generator():
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cs = CSLDP(data, error_p, confidence, privacy, att_num)
+    cs = FASLDP(data, error_p, confidence, privacy, att_num)
 
     x = []
     for i in range(100):
@@ -31,18 +31,18 @@ def test_random_generator():
     print(x.count(-1))
 
 
-def test_sketch_cms_ldp():
+def test_sketch_fas_ldp():
     data = [1, 3, 5, 1, 3, 2, 4, 4]
     error_p = 0.1
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cms = CSLDP(data, error_p, confidence, privacy, att_num)
-    cms.sketch_cs_ldp()
+    cms = FASLDP(data, error_p, confidence, privacy, att_num)
+    cms.sketch_fas_ldp()
     print(cms.sketch)
 
 
-def test_server_cms_ldp():
+def test_server_fas_ldp():
     data = []
     s = {1: 0, 2: 0, 3:0, 4:0, 5:0}
     for i in range(10000):
@@ -57,13 +57,13 @@ def test_server_cms_ldp():
     confidence = 0.1
     privacy = 2
     att_num = 5
-    cms = CSLDP(data, error_p, confidence, privacy, att_num)
-    cms.sketch_cs_ldp()
-    print(cms.server_cs_ldp(1))
-    print(cms.server_cs_ldp(2))
-    print(cms.server_cs_ldp(3))
-    print(cms.server_cs_ldp(4))
-    print(cms.server_cs_ldp(5))
+    cms = FASLDP(data, error_p, confidence, privacy, att_num)
+    cms.sketch_fas_ldp()
+    print(cms.server_fas_ldp(1))
+    print(cms.server_fas_ldp(2))
+    print(cms.server_fas_ldp(3))
+    print(cms.server_fas_ldp(4))
+    print(cms.server_fas_ldp(5))
 
 
-test_server_cms_ldp()
+test_server_fas_ldp()

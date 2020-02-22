@@ -2,6 +2,10 @@ import math
 import random
 
 from algs.cms_ldp import CMSLDP
+from log.logger import Logger
+
+
+LOG = Logger(level='debug').logger
 
 
 def test_random_generator():
