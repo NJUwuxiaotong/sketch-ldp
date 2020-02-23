@@ -34,7 +34,7 @@ class FASLDP(SketchLDP):
 
     def generate_hash_index(self, hash_num):
         hash_index = []
-        while len(hash_index) <= hash_num:
+        while len(hash_index) < hash_num:
             h_index = random.randint(0, self.total_hash_num - 1)
             if h_index not in hash_index:
                 hash_index.append(h_index)
