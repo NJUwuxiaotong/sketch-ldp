@@ -45,7 +45,7 @@ def test_error_of_wisdom_cms_ldp():
     error_ps = [0.15, 0.18, 0.2, 0.25]  # bit-num: 14 12 10 8
     data = list()
     for k in wisdom:
-        for i in range(wisdom[k]):
+        for i in range(int(wisdom[k]/50)):
             data.append(wisdom_mappings[k])
 
     LOG.info('Process dataset WISDOM')
@@ -68,7 +68,7 @@ def test_error_of_wisdom_fcs_ldp():
     error_ps = [0.15, 0.18, 0.2, 0.25]  # bit-num: 14 12 10 8
     data = list()
     for k in wisdom:
-        for i in range(wisdom[k]):
+        for i in range(int(wisdom[k]/50)):
             data.append(wisdom_mappings[k])
 
     LOG.info('Process dataset WISDOM - FCS-LDP')
@@ -129,6 +129,201 @@ def test_error_of_wisdom_fas_ldp():
         LOG.info('Frequency estimation is %s' % estimated_values)
 
 
+def test_error_of_od_cms_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 500 450 400 350
+    data = list()
+    for k in od:
+        for i in range(od[k]):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cms = CMSLDP(data, error_p, confidence, privacy_budget, att_num)
+        cms.sketch_cms_ldp()
+        LOG.info(cms.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cms.server_cms_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_od_fcs_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 500 450 400 350
+    data = list()
+    for k in od:
+        for i in range(od[k]):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - FCS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        fcs = FCSLDP(data, error_p, confidence, privacy_budget, att_num)
+        fcs.sketch_fcs_ldp()
+        LOG.info(fcs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = fcs.server_fcs_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_od_cs_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 500 450 400 350
+    data = list()
+    for k in od:
+        for i in range(od[k]):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - CS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cs = CSLDP(data, error_p, confidence, privacy_budget, att_num)
+        cs.sketch_cs_ldp()
+        LOG.info(cs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cs.server_cs_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_od_fas_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 500 450 400 350
+    data = list()
+    for k in od:
+        for i in range(od[k]):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - FAS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cs = FASLDP(data, error_p, confidence, privacy_budget, att_num)
+        cs.sketch_fas_ldp()
+        LOG.info(cs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cs.server_fas_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_small_od_cms_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 400 350
+    data = list()
+    for k in od:
+        for i in range(int(od[k]/50)):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - CMS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cs = CMSLDP(data, error_p, confidence, privacy_budget, att_num)
+        cs.sketch_cms_ldp()
+        LOG.info(cs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cs.server_cms_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_small_od_fcs_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 400 350
+    data = list()
+    for k in od:
+        for i in range(int(od[k]/50)):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - FCS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cs = FCSLDP(data, error_p, confidence, privacy_budget, att_num)
+        cs.sketch_fcs_ldp()
+        LOG.info(cs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cs.server_fcs_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_small_od_cs_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 400 350
+    data = list()
+    for k in od:
+        for i in range(int(od[k]/50)):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - CS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cs = CSLDP(data, error_p, confidence, privacy_budget, att_num)
+        cs.sketch_cs_ldp()
+        LOG.info(cs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cs.server_cs_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+
+def test_error_of_small_od_fas_ldp():
+    confidence = 0.1
+    privacy_budget = 3
+    att_num = len(od_keys)
+
+    error_ps = [0.004, 0.0044, 0.005, 0.00571]  # bit-num: 500 450 400 350
+    data = list()
+    for k in od:
+        for i in range(int(od[k]/50)):
+            data.append(od_mappings[k])
+
+    LOG.info('Process dataset OD - FAS-LDP')
+    for error_p in error_ps:
+        LOG.info('Parameter error is %s' % error_p)
+        estimated_values = dict()
+        cs = FASLDP(data, error_p, confidence, privacy_budget, att_num)
+        cs.sketch_fas_ldp()
+        LOG.info(cs.sketch)
+        for id in od_mappings.values():
+            estimated_values[id] = cs.server_fas_ldp(id)
+        LOG.info('Frequency estimation is %s' % estimated_values)
+
+# test_error_of_wisdom_fcs_ldp()
+# test_error_of_wisdom_cs_ldp()
+# test_error_of_wisdom_fas_ldp()
+
+# test_error_of_od_cms_ldp()
+#test_error_of_od_fcs_ldp()
+
+
+test_error_of_wisdom_cms_ldp()
 test_error_of_wisdom_fcs_ldp()
-test_error_of_wisdom_cs_ldp()
-test_error_of_wisdom_fas_ldp()
+
+#test_error_of_small_od_cms_ldp()
+#test_error_of_small_od_fcs_ldp()
+#test_error_of_small_od_cs_ldp()
+#test_error_of_small_od_fas_ldp()

@@ -81,10 +81,7 @@ class FCSLDP(SketchLDP):
             pos = pos % self.bit_len
             f.append(self.sketch[i][pos])
         min_v = min(f)
-        if min_v < 0:
-            return 0
-        else:
-            return math.ceil(min_v)
+        return math.ceil(min_v)
 
     def random_generator(self, sub_privacy, pos):
         e_privacy = math.exp(sub_privacy)
